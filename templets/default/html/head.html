@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="container">
+    <div class="logo"> <a href="/" title="{seacms:sitename}"> {if:"{zuoz:znologot}"=="1"}<img src="{zuoz:znologo}" alt="{seacms:sitename}" class="animate__animated animate__flash">{end if} <span class="name">{seacms:sitename}</span> </a> </div>
+    <div class="search-box">
+      <form action="/search.php" class="vodsearch">
+        <input class="search-input ac_wd search-focus" id="txtKeywords" type="text" name="searchword" autocomplete="off" placeholder="我想赚几个亿很合理吧" value="">
+        <button class="search-btn search-go search-focus" type="submit"><i class="iconfont icon-sousuo"></i></button>
+      </form>
+    </div>
+    
+    <div class="nav"> 
+
+        {seacms:menulist type=top}
+     <a href="[menulist:link]" title="[menulist:typename]" >{if:"[menulist:i]" == 1}<i class="iconfont icon-yingshi"></i>{elseif:"[menulist:i]" == 2}<i class="iconfont icon-leixing-jujiicon"></i>{elseif:"[menulist:i]" == 3}<i class="iconfont icon-zongyi"></i>{elseif:"[menulist:i]" == 4}<i class="iconfont icon-dongman"></i>{end if}[menulist:typename]</a>
+     {if:"[menulist:i]"<2}<span class="space-line-bold"></span>{end if}
+    
+    
+    {/seacms:menulist}
+        <span class="space-line-bold"></span> <a href="/label/jian.html" title="推荐" ><i class="iconfont icon-tuijian4" style="color:#ff8155"></i>推荐</a>
+    <span class="space-line-bold"></span> <a href="/label/rank-day.html" title="排行榜" ><i class="iconfont icon-tuijian2"></i>排行榜</a>
+    <span class="space-line-bold"></span>
+      <div class="menu watch-history"> <span><i class="iconfont icon-bofang"></i></span>
+        <ul class="menu-ul animate__animated animate__headShake" id="history">
+        </ul>
+      </div>
+      <span class="space-line-bold"></span>
+      <div class="menu"> <span><i class="iconfont icon-caidanguanli"></i></span>
+        <ul class="menu-ul animate__animated animate__headShake">
+          <li> <a href="/" class="active"> <i class="iconfont icon-shouye"></i>
+            <h2>首页</h2>
+            </a> </li>
+              {seacms:menulist type=top}
+          <li> <a href="[menulist:link]" title="[menulist:typename]" > {if:"[menulist:i]" == 1}<i class="iconfont icon-yingshi"></i>{elseif:"[menulist:i]" == 2}<i class="iconfont icon-leixing-jujiicon"></i>{elseif:"[menulist:i]" == 3}<i class="iconfont icon-zongyi"></i>{elseif:"[menulist:i]" == 4}<i class="iconfont icon-dongman"></i>{end if}
+            <h2>[menulist:typename]</h2>
+            </a> </li>
+             {/seacms:menulist}
+          <li> <a href="/label/jian.html" title="推荐" > <i class="iconfont icon-tuijian4" style="color:#ff8155"></i>
+            <h2>推荐</h2>
+            </a> </li>
+          <li> <a href="/label/rank-day.html" title="排行榜" > <i class="iconfont icon-tuijian2"></i>
+            <h2>排行</h2>
+            </a> </li>
+          <li> <a class="share" title="我要分享" href="javascript:;" data-clipboard-text="{seacms:siteurl}"> <i class="iconfont icon-fenxiang"></i>
+            <h2>分享</h2>
+            </a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,91 @@
+<html lang="zh-CN">
+<head>
+            <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#16161a">
+    <title>“{seacms:searchword}”在线搜索 - {seacms:sitename}</title>
+    <meta name="keywords" content="{seacms:searchword},{seacms:searchword}在线搜索,{seacms:searchword}搜索结果" />
+    <meta name="description" content="搜索{seacms:searchword}，找到相关影视作品" />
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<main class="main pt50">
+    <div class="container">
+        <div class="block search-con mt15 mb30">
+    <div class="res">
+        <p>{seacms:searchword}</p>
+        <p>搜索“{seacms:searchword}”，找到<span class="mac_total active"></span>部影视作品</p>
+    </div>
+    
+    <ul>
+               
+               
+               
+               
+               {seacms:searchlist size=16 order=time}
+                <li>
+            <div class="pic">
+                <a href="[searchlist:link]" title="[searchlist:name]"><img class="lazyload" data-src="[searchlist:pic]" src="/zuoz/img/loading.jpg" alt="[searchlist:name]">
+                </a>
+            </div>
+            <div class="info">
+                <p>
+                    <a href="[searchlist:link]" title="[searchlist:name]">
+                        [searchlist:name]                    </a>
+                </p>
+                <p>
+                    <span><a href="[searchlist:typelink]" title="[searchlist:typename]">
+						 [searchlist:typename]					</a></span>
+                                        <span>					[searchlist:jqtype]
+					</span>
+                                        <span>[searchlist:publishtime]</span>
+                </p>
+                <p>
+                    <span>导演：</span>
+                    [searchlist:director]</p>
+                <p>
+                    <span>主演：</span>
+                    [searchlist:actor]           </p>
+                <p>
+                    <span>剧情：</span>
+                   [searchlist:des]  </p>
+                <p>
+                                        <span><a href="[searchlist:link]" title="立刻播放[searchlist:name]"><i class="iconfont icon-bofang"></i>立即播放</a></span>
+                                    </p>
+            </div>
+            <div class="state">
+                <span>[searchlist:note]</span></div>
+        </li>
+              
+              {/seacms:searchlist}
+              
+            </ul>
+</div>
+        
+    <div id="page" class="page"> 
+    {if:"{searchlist:page}" == "1"}<a href="javascript:;" class="page-first page-unactive" title="首页">首页</a> <a href="javascript:;" class="page-prev page-unactive" title="上一页">上一页</a> {else}<a href="{searchlist:firstlink}" class="page-first" title="首页">首页</a> <a href="{searchlist:backlink}" class="page-first" title="上一页">上一页</a>{end if}
+     {searchlist:pagenumber len=5}
+     
+      {if:"{searchlist:page}" == "[pagenumber:page]"}<a href="javascript:;" class="{subif:"{searchlist:page}"=="[pagenumber:page]"}page-active{end subif}" title="第[pagenumber:page]页">[pagenumber:page]</a>{else}
+     
+     <a href="[pagenumber:link]" class="{subif:"{searchlist:page}"=="[pagenumber:page]"}page-active{end subif}" title="第[pagenumber:page]页">[pagenumber:page]</a>{end if}
+     {/searchlist:pagenumber}
+    
+ 
+     {if:"{searchlist:page}" == {searchlist:pagecount}}
+   <a href="javascript:;" class="page-next page-unactive" title="下一页">下一页</a>
+    <a href="javascript:;" class="page-last page-unactive" title="尾页">尾页</a>
+    {else}
+     <a href="{searchlist:nextlink}" class="page-next" title="下一页">下一页</a> <a href="{searchlist:lastlink}" class="page-last" title="尾页">尾页</a> </div>
+    {end if}
+    </div>
+</main>
+{seacms:foot}
+<script>
+    $(".meatdes_totla").text('{seacms:searchnum}');
+    $(".mac_total").text('{seacms:searchnum}');
+</script>
+</body>
+</html>

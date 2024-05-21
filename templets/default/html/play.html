@@ -1,0 +1,138 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+
+		<title>《{playpage:name}》{playpage:typename}高清完整版免费在线观看({playpage:publishtime}/{playpage:publisharea}/{playpage:note}) - {playpage:part} - {seacms:sitename}</title>
+		<meta name="keywords" content="{playpage:name},{playpage:name}免费观看,{playpage:nolinkjqtype}" />
+		<meta name="description" content="{playpage:name}免费观看,{playpage:typename}{playpage:name}于{playpage:publishtime}年在{playpage:publisharea}上映,{seacms:sitename}为您免费提供{playpage:name}{playpage:note}在线观看" />
+{seacms:load include.html}
+   
+    <script>
+        var zuoz = { "dz": "{playpage:dz}","dzx": "{playpage:dzx}","dzs": "{playpage:dzs}","name":"{playpage:name} {playpage:part}" };
+    </script>
+</head>
+
+<body class="body">
+{seacms:top}
+<main class="main pt50">
+  <div class="container">
+    <div class="playbox">
+      <div class="player">
+        <div class="tips-box"> <span class="tips-close-btn"><i class="iconfont icon-guanbi"></i></span>
+          <div class="ggswiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide p"><i class="iconfont icon-tishi"></i>如遇视频无法播放或加载速度慢，可尝试切换播放节点 </li>
+              <li class="swiper-slide p"><i class="iconfont icon-tishi"></i>不要轻易相信视频中的任何广告，谨防上当受骗</li>
+            </ul>
+          </div>
+        </div>
+        <div class="player-wrapper"><div id="player"></div></div>
+        <div class="player-info">
+          <div class="minfo">
+            <h1 class="name nowrap">{playpage:name}</h1>
+            <div class="tag nowrap"> <span> <a href="{playpage:typelink}" title="{playpage:typename}"> {playpage:typename} </a> </span> <span class="type">{playpage:jqtype} </span> <span> {if:"{playpage:publishtime}"!=""}<a href="/search.php?searchtype=5&tid={playpage:typeid}&year={playpage:publishtime}"> {playpage:publishtime} </a> </span>{end if}{if:"{playpage:publisharea}"!=""} <span> <a href="/search.php?searchtype=5&tid={playpage:typeid}&area={playpage:publisharea}">{playpage:publisharea} </a> </span>{end if} </div>
+          </div>
+          <div class="ysinfo" id="ysinfotext">{playpage:des}</div>
+          <div class="mdo"> <span class="next"><a href="{playpage:nextplaylink}" title="播放《{playpage:name}》下一集"> <i class="iconfont icon-xiayiji"></i>
+            <h3>下一集</h3>
+            </a></span> <span class="share" data-clipboard-text="{seacms:siteurl}{playpage:link}"><a
+                                    href="javascript:;" title=""><i class="iconfont icon-fenxiang_2"></i>
+            <h3>分享</h3>
+            </a></span> <span class="switch"><a href="javascript:;" title=""><i class="iconfont icon-qiehuan"></i>
+            <h3>切换线路</h3>
+            </a> <span class="mxianlu animate__animated animate__fadeInUp">  {playpage:playlist} {if:"[playlist:from]"=="{playpage:from}"} <a href="javascript:;" class="active">[playlist:from]<small>[playlist:num]</small></a> {else} <a href="[playlist:url]">[playlist:from]<small>[playlist:num]</small></a> {end if}
+  {/playpage:playlist}</span> </span> </div>
+        </div>
+      </div>
+      <div class="jisu"> {playpage:playlist}{if:"[playlist:from]"=="{playpage:from}"}
+  
+  [playlist:link target=_self]
+  {end if} {/playpage:playlist}</div>
+<div class="xianlu"> 
+ {playpage:playlist} {if:"[playlist:from]"=="{playpage:from}"} <a href="javascript:;" class="active">[playlist:from]<small>[playlist:num]</small></a> {else} <a href="[playlist:url]">[playlist:from]<small>[playlist:num]</small></a> {end if}
+  {/playpage:playlist} </div>
+
+    </div>
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="iconfont icon-guanlian"></i>关联推荐</h1>
+      </div>
+      <div class="a-con txlswiper" style="display:flex;overflow:hidden">
+        <div class="swiper-wrapper"> {seacms:videolist num=12 rel=y}
+          <div class="a-con-inner swiper-slide">
+            <div class="pic" style="aspect-ratio: 16/9;"> <a href="[videolist:link]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg" alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s4"> [videolist:note] </span> </div>
+            <span class="s1"> <a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a> </span> <span class="s2"> [videolist:jqtype] </span> </div>
+          {/seacms:videolist} </div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="/zuoz/css/swiper-bundle.css">
+    <script type="text/javascript" src="/zuoz/js/swiper-bundle.js"></script> 
+    <script>
+    var swiper = new Swiper(".txlswiper", {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        freeMode: true,
+        autoplay:true,
+        breakpoints:{
+            767:{
+                slidesPerView:6,
+                spaceBetween: 15,
+            }
+        }
+    });
+    var swiper = new Swiper(".ggswiper", {
+        direction: 'vertical',
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        }
+    })
+</script>
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="icon icon-like"></i> 猜你喜欢</h1>
+        <span></span> </div>
+      <div class="a-con"> {seacms:videolist num=24 rel=r}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist} </div>
+    </div>
+  </div>
+</main>
+ <script>
+    $(function () {
+        saveToStorage('{playpage:id}','{playpage:name}','{playpage:part}',window.location.href)
+        expandText('#ysinfotext', 100); 
+        if (isMobileDevice()) {
+          handleScrollPosition('.jisu', 'x');
+        } else {
+          handleScrollPosition('.jisu', 'y');
+        }
+        /*线路*/
+        $(".switch").hover(function() {
+            $(".mxianlu").css("display","grid").show();
+        },function() {
+            $(".mxianlu").hide();
+        });
+        /*提示*/
+       $(".tips-close-btn").click(function(){
+            $(this).hide();
+            $(".tips-box").hide();
+        });
+        /*手机看*/
+        $(".mobile").hover(function() {
+            $(".qrcode-img").show();
+        },function() {
+            $(".qrcode-img").hide();
+        });
+    });
+    </script>
+
+{seacms:foot}
+</body>
+</html>

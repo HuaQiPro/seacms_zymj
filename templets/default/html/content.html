@@ -1,0 +1,77 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+		<title>《{playpage:name}》高清完整版在线观看{playpage:downlist}/[downlist:from]{/playpage:downlist} - {playpage:typename} - {seacms:sitename}</title>
+		<meta name="keywords" content="{playpage:name},{playpage:name}在线观看" />
+		<meta name="description" content="{playpage:name}高清完整版资源由{seacms:sitename}为广大网友收集而来，还免费提供{playpage:typename}{playpage:name}在线观看，还同时提供{playpage:name}剧情介绍、演员表、上映时间、上映地区、视频图片等影片信息。" />
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<div class="movbox">
+  <div class="cover" style="background-image: url({playpage:pic});"></div>
+  <div class="container pt50">
+    <div class="info">
+      <div class="pic"> <a href="{playpage:link}" title="{playpage:name}"><img class="lazyload" data-src="{playpage:pic}" src="/zuoz/img/loading.jpg" alt=""></a></div>
+      <div class="con">
+        <div class="p1">
+          <p class="tit"> {playpage:name} </p>
+        <!--<p class="ftit"> {playpage:encodename} </p>
+-->          <p class="type"> <span> <a href="{playpage:typelink}" title="{playpage:typename}"> {playpage:typename} </a> </span> <span>{playpage:jqtype}</span> <span> {if:"{playpage:publishtime}"!=""}<a href="/search.php?searchtype=5&tid={playpage:typeid}&year={playpage:publishtime}">{playpage:publishtime}</a> </span>{end if}{if:"{playpage:publisharea}"!=""} <span> <a href="/search.php?searchtype=5&tid={playpage:typeid}&area={playpage:publisharea}">{playpage:publisharea}</a> </span>{end if} </p>
+          <p class="play"> <a href="{playpage:playlink}" title="立刻播放{playpage:name}"> <i class="iconfont icon-bofang"></i> 立即播放 </a> </p>
+        </div>
+        <div class="p2">
+          <p class="daoyan"> <span class="name"> 导演： </span> {playpage:director} </p>
+          <p class="zhuyan clamp2"> <span class="name"> 主演： </span> {playpage:actor} </p>
+          <p class="zhuangtai"> <span class="name"> 状态： </span> {playpage:note}  </p>
+          <p class="juqing"> <span class="name"> 剧情： </span> <span id="articleText">{playpage:des} </span> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<main class="main">
+  <div class="container">
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="icon icon-like"></i>&nbsp;猜你喜欢</h1>
+        <span></span> </div>
+      <div class="a-con">
+        {seacms:videolist num=12 rel=y}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist}
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+    $(function () {
+        expandText('#articleText', 100);
+    });
+document.addEventListener("DOMContentLoaded", function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/include/ajax.php?action=hit&id={playpage:id}', true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) { // 请求完成
+            if (xhr.status === 200) { // 请求成功
+                console.log("Success: ", xhr.responseText);
+                // 这里可以处理成功的响应
+            } else {
+                console.error("Error: ", xhr.statusText);
+                // 这里可以处理错误
+            }
+        }
+    };
+
+    xhr.send(null);
+});
+</script>
+{seacms:foot}
+</body>
+</html>

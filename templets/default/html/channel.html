@@ -1,0 +1,119 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+		<title>最新好看的{channelpage:typename}推荐_热门{channelpage:typename}大全排行榜_第{channelpage:page}页-{seacms:sitename}</title>
+		<meta name="keywords" content="最新{channelpage:typename},好看的{channelpage:typename},热门{channelpage:typename}" />
+		<meta name="description" content="{seacms:sitename}的{channelpage:typename}栏目为广大{channelpage:typename}爱好者提供了各类最新好看的{channelpage:typename}，收集了最新热门{channelpage:typename}排行榜，是一家优质的{channelpage:typename}分享网站，我们诚挚的欢迎所有喜欢看{channelpage:typename}大全的朋友的到来。" />
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<main class="main pt50">
+  <div class="container">
+    <div class="block category">
+    
+     {if:"{channelpage:upid}" ="1"}
+          <dl>
+            <dt><h2>分类</h2></dt>
+            <dd> <a class="{subif:"{seacms:currenttypeid}"<"3"}active{end subif}" href="/search.php?searchtype=5">全部</a>{seacms:smallmenulist type=1} <a class="{subif:"[smallmenulist:typeid]"="{seacms:currenttypeid}"}active{end subif}" href="[smallmenulist:link]">[smallmenulist:typename]</a>{/seacms:smallmenulist}</dd>
+          </dl>
+{elseif:"{channelpage:typeid}" ="1"}
+          <dl>
+            <dt><h2>分类</h2></dt>
+            <dd> <a class="{subif:"{seacms:currenttypeid}"<"3"}active{end subif}" href="/search.php?searchtype=5">全部</a>{seacms:smallmenulist type=1} <a class="{subif:"[smallmenulist:typeid]"="{seacms:currenttypeid}"}active{end subif}" href="[smallmenulist:link]">[smallmenulist:typename]</a>{/seacms:smallmenulist}</dd>
+          </dl>
+{elseif:"{channelpage:upid}" ="2"}
+
+          <dl>
+            <dt><h2>分类</h2></dt>
+            <dd> <a class="{subif:"{seacms:currenttypeid}"<"3"}active{end subif}" href="/search.php?searchtype=5">全部</a>{seacms:smallmenulist type=2} <a class="{subif:"[smallmenulist:typeid]"="{seacms:currenttypeid}"}active{end subif}" href="[smallmenulist:link]">[smallmenulist:typename]</a>{/seacms:smallmenulist}</dd>
+          </dl>
+{elseif:"{channelpage:typeid}" ="2"}
+          <dl>
+            <dt><h2>分类</h2></dt>
+            <dd> <a class="{subif:"{seacms:currenttypeid}"<"3"}active{end subif}" href="/search.php?searchtype=5">全部</a>{seacms:smallmenulist type=2} <a class="{subif:"[smallmenulist:typeid]"="{seacms:currenttypeid}"}active{end subif}" href="[smallmenulist:link]">[smallmenulist:typename]</a>{/seacms:smallmenulist}</dd>
+          </dl>
+{end if}
+      <dl>
+        <dt>
+          <h2>剧情</h2>
+        </dt>
+
+        
+         <dd> <a class="active" href="/search.php?searchtype=5">全部</a>{seacms:jqcaslist} <a href="[jqcaslist:link]">[jqcaslist:value]</a>{/seacms:jqcaslist}</dd>
+        
+
+      </dl>
+      <dl>
+        <dt>
+          <h2>地区</h2>
+        </dt>
+        <dd> <a class="active" href="/search.php?searchtype=5">全部</a>{seacms:areacaslist} <a href="[areacaslist:link]">[areacaslist:value]</a>{/seacms:areacaslist}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>时间</h2>
+        </dt>
+         <dd> <a class="active" href="/search.php?searchtype=5">全部</a> {seacms:yearcaslist} <a href="[yearcaslist:link]">[yearcaslist:value]</a>{/seacms:yearcaslist} </dd>
+      </dl>
+      
+    <dl>
+        <dt><h2>查找</h2></dt>
+        <dd> <a class="active" href="/search.php?searchtype=5">全部</a> {seacms:lettercaslist} <a href="[lettercaslist:link]">[lettercaslist:value]</a>{/seacms:lettercaslist} </dd>
+    </dl>  
+      
+      
+      
+      
+      <dl>
+        <dt>
+          <h2>排序</h2>
+        </dt>
+        <dd> <a href="{channelpage:order-time-link}" class="order active">按时间</a> <a href="{channelpage:order-hit-link}" class="order ">按人气</a> <a href="{channelpage:order-score-link}" class="order ">按评分</a> </dd>
+      </dl>
+      <p>为你选出<span class="active mac_total"></span>部{channelpage:typename}在线观看</p>
+    </div>
+    <div class="block category-con">
+      <div class="a-tit">
+        <h1><i class="iconfont icon-niu"></i>筛选结果</h1>
+      </div>
+      <div class="a-con">
+       {seacms:channellist size=72 order=time}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[channellist:link]" title="[channellist:name]"> <img class="lazyload" data-src="[channellist:pic]" src="/zuoz/img/loading.jpg"  alt="[channellist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[channellist:douban]</span> <span class="s4 text-left">[channellist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [channellist:actor len=15] </b> <b>[channellist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[channellist:link]" title="[channellist:name]">[channellist:name]</a></span> <span class="s2"> [channellist:jqtype] </span> </div>
+        {/seacms:channellist}
+      </div>
+    </div>
+    <div id="page" class="page"> 
+    {if:"{channellist:page}" == "1"}<a href="javascript:;" class="page-first page-unactive" title="首页">首页</a> <a href="javascript:;" class="page-prev page-unactive" title="上一页">上一页</a> {else}<a href="{channellist:firstlink}" class="page-first" title="首页">首页</a> <a href="{channellist:backlink}" class="page-first" title="上一页">上一页</a>{end if}
+     {channellist:pagenumber len=5}
+     
+      {if:"{channellist:page}" == "[pagenumber:page]"}<a href="javascript:;" class="{subif:"{channellist:page}"=="[pagenumber:page]"}page-active{end subif}" title="第[pagenumber:page]页">[pagenumber:page]</a>{else}
+     
+     <a href="[pagenumber:link]" class="{subif:"{channellist:page}"=="[pagenumber:page]"}page-active{end subif}" title="第[pagenumber:page]页">[pagenumber:page]</a>{end if}
+     {/channellist:pagenumber}
+    
+ 
+     {if:"{channellist:page}" == {channellist:pagecount}}
+   <a href="javascript:;" class="page-next page-unactive" title="下一页">下一页</a>
+    <a href="javascript:;" class="page-last page-unactive" title="尾页">尾页</a>
+    {else}
+     <a href="{channellist:nextlink}" class="page-next" title="下一页">下一页</a> <a href="{channellist:lastlink}" class="page-last" title="尾页">尾页</a> </div>
+    {end if}
+ 
+ 
+
+  </div>
+</main>
+{seacms:foot}
+{seacms:arealist areatype={seacms:currenttypeid}}
+<script>
+    $(".mac_total").text('[arealist:count]');
+</script>
+{/seacms:arealist}
+</body>
+</html>

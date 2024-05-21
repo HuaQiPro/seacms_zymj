@@ -1,0 +1,59 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+<title>人气排行榜（总榜） | {seacms:sitename}</title>
+<meta name="keywords" content="电影、电视剧、综艺、动漫排行榜,电影、电视剧、综艺、动漫人气排行榜">
+<meta name="description" content="{seacms:des}">
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<main class="main pt50">
+  <div class="container">
+    <section class="banner" style="min-height: 100px;">
+      <div class="banner-inner">
+        <h1 style="font-size:30px;">人气排行榜</h1>
+        <p>TOP50总榜</p>
+      </div>
+    </section>
+    <div class="block mb30">
+      <div class="rank-box">
+        <div class="rank-bg"> <i class="iconfont icon-jiangzhang"></i> </div>
+        <div class="rank-cycle"> <a href="/label/rank.html">总榜</a> <a href="/label/rank-month.html">月榜</a> <a href="/label/rank-week.html" class="active">周榜</a> </div>
+        <div class="rank-con">
+          <ul>
+          
+          {seacms:videolist num=50 order=weekhit type=all}
+            <li>
+              <div class="rank-con-l">
+                <p>[videolist:n]</p>
+              </div>
+              <div class="rank-con-m">
+                <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg" alt="[videolist:name]"> </a> </div>
+                <div class="info">
+                  <p><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></p>
+                  <p>[videolist:des len=30]</p>
+                  <p> <a href="[videolist:typelink]" title="[videolist:typename]">[videolist:typename]</a> </p>
+                  <p><span>[videolist:note]</span></p>
+                </div>
+              </div>
+              <div class="rank-con-r">
+                <p>[videolist:hit]</p>
+                <p>人气指数</p>
+              </div>
+            </li>
+            
+            {/seacms:videolist}
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{seacms:foot}
+</body>
+</html>

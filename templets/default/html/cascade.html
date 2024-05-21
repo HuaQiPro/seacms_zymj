@@ -1,0 +1,92 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+		<title>影视库 - {seacms:sitename}</title>
+		<meta name="keywords" content="{seacms:sitenotice}">
+		<meta name="description" content="{seacms:des}">
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<main class="main pt50">
+  <div class="container">
+    <div class="block category">
+    <dl>
+            <dt><h2>分类</h2></dt>
+            <dd> {seacms:typeitemlist type=all} <a class="{if:"{searchpage:typename}"="[typeitemlist:value]"}active{end if}" href="[typeitemlist:link]">[typeitemlist:value]</a>{/seacms:typeitemlist}</dd>
+          </dl>
+          <dl>
+        <dt>
+          <h2>剧情</h2>
+        </dt>
+        <dd> 
+         <dd> {seacms:jqitemlist} <a class="{if:"{searchpage:jq}"=="[jqitemlist:value]"}active{end if}" href="[jqitemlist:link]">[jqitemlist:value]</a>{/seacms:jqitemlist}</dd>
+        
+         </dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>地区</h2>
+        </dt>
+         <dd> {seacms:areaitemlist}<a class="{if:"[areaitemlist:value]"=="{searchpage:area}"}active{end if}" href="[areaitemlist:link]">[areaitemlist:value]</a>{/seacms:areaitemlist}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>时间</h2>
+        </dt>
+        <dd>{seacms:yearitemlist}<a class="{if:"[yearitemlist:value]"=="{searchpage:year}"}active{end if}" href="[yearitemlist:link]">[yearitemlist:value]</a>{/seacms:yearitemlist} </dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>查找</h2>
+        </dt>
+         <dd>{seacms:letteritemlist}<a class="{if:"[letteritemlist:value]"=="{searchpage:letter}"}active{end if}" href="[letteritemlist:link]">[letteritemlist:value]</a>{/seacms:letteritemlist} </dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>排序</h2>
+        </dt>
+        <dd> <a href="{searchpage:order-time-link}" class="order {if:{searchpage:ordername}=time}active{end if}">按时间</a> <a href="{searchpage:order-hit-link}" class="order {if:{searchpage:ordername}=hit} active{end if}">按人气</a> <a href="{searchpage:order-score-link}" class="order{if:{searchpage:ordername}=score} active{end if}">按评分</a> </dd>
+      </dl>
+      <p>为你选出<span class="active mac_total"></span>部{if:"{searchpage:typename}"=="全部"}视频{else}{searchpage:typename}{end if}在线观看</p>
+    </div>
+    <div class="block category-con">
+      <div class="a-tit">
+        <h1><i class="iconfont icon-niu"></i>筛选结果</h1>
+      </div>
+      <div class="a-con">
+       {seacms:cascadelist size=72 order=time}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[cascadelist:link]" title="[cascadelist:name]"> <img class="lazyload" data-src="[cascadelist:pic]" src="/zuoz/img/loading.jpg"  alt="[cascadelist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[cascadelist:douban]</span> <span class="s4 text-left">[cascadelist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [cascadelist:actor] </b> <b>[cascadelist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[cascadelist:link]" title="[cascadelist:name]">[cascadelist:name]</a></span> <span class="s2"> [cascadelist:jqtype] </span> </div>
+        {/seacms:cascadelist}
+      </div>
+    </div>
+    <div id="page" class="page"> 
+    {if:"{cascadelist:page}" == "1"}<a href="javascript:;" class="page-first page-unactive" title="首页">首页</a> <a href="javascript:;" class="page-prev page-unactive" title="上一页">上一页</a> {else}<a href="{cascadelist:firstlink}" class="page-first" title="首页">首页</a> <a href="{cascadelist:backlink}" class="page-first" title="上一页">上一页</a>{end if}
+     {cascadelist:pagenumber len=5}
+     
+      {if:"{cascadelist:page}" == "[pagenumber:page]"}<a href="javascript:;" class="{subif:"{cascadelist:page}"=="[pagenumber:page]"}page-active{end subif}" title="第[pagenumber:page]页">[pagenumber:page]</a>{else}
+     
+     <a href="[pagenumber:link]" class="{subif:"{cascadelist:page}"=="[pagenumber:page]"}page-active{end subif}" title="第[pagenumber:page]页">[pagenumber:page]</a>{end if}
+     {/cascadelist:pagenumber}
+    
+ 
+     {if:"{cascadelist:page}" == {cascadelist:pagecount}}
+   <a href="javascript:;" class="page-next page-unactive" title="下一页">下一页</a>
+    <a href="javascript:;" class="page-last page-unactive" title="尾页">尾页</a>
+    {else}
+     <a href="{cascadelist:nextlink}" class="page-next" title="下一页">下一页</a> <a href="{cascadelist:lastlink}" class="page-last" title="尾页">尾页</a> </div>
+     {end if}
+ 
+  </div>
+</main>
+{seacms:foot}
+<script>
+    $(".mac_total").text('{seacms:searchnum}');
+</script>
+</body>
+</html>

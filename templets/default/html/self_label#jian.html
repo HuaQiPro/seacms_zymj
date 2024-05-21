@@ -1,0 +1,33 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+<title>推荐电影、电视剧、综艺、动漫在线观看，24小时更新超高人气电影、电视剧、综艺、动漫 | {seacms:sitename}</title>
+<meta name="keywords" content="电影、电视剧、综艺、动漫排行榜,电影、电视剧、综艺、动漫人气排行榜">
+<meta name="description" content="{seacms:des}">
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<main class="main pt50">
+  <div class="container">
+    <section class="banner" style="min-height: 100px;">
+      <div class="banner-inner">
+        <h1>推荐</h1>
+        <p>综合点击数、观看时长、转发收藏等数据进行排名更新</p>
+      </div>
+    </section>
+    <div class="block mt10 mb30">
+            <div class="a-con"> {seacms:videolist num=72 order=year type=all}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist} </div>
+    </div>
+  </div>
+</main>
+{seacms:foot}
+</body>
+</html>

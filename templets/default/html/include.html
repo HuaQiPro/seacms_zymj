@@ -1,0 +1,26 @@
+    <link rel="shortcut icon" href="/zuoz/img/favicon.ico">
+<style>:root{--poster-high: 140%;--poster-radius: 10px;}</style>
+<link rel="stylesheet" href="/zuoz/css/reset.css">
+<link rel="stylesheet" href="/zuoz/css/style.css">
+<link href="/zuoz/css/font/iconfont.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4545904_g6wyhnvmrv9.css">
+<link rel="stylesheet" href="/zuoz/css/animate.min.css">
+<link rel="stylesheet" href="/zuoz/css/jquery.toast.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="/zuoz/js/jquery.lazyload.js"></script>
+<script type="text/javascript" src="/zuoz/js/jquery.toast.js"></script>
+<script type="text/javascript" src="/zuoz/js/clipboard.min.js"></script>
+<!-- // pwa -->
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/zuoz/js/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered:', registration);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+</script>

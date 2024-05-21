@@ -1,0 +1,66 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#16161a">
+<title>{seacms:sitename}</title>
+<meta name="keywords" content="{seacms:sitenotice}">
+<meta name="description" content="{seacms:des}">
+{seacms:load include.html}
+</head>
+<body class="body">
+{seacms:top}
+<section class="banner index-banner mt50">
+  <div class="banner-inner">
+    <h1>{zuoz:znobanner_h1}</h1>
+    <p>{zuoz:znobanner_p}</p>
+  </div>
+</section>
+<main class="main">
+  <div class="container">
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="icon icon-calendar"></i>&nbsp;最近更新</h1>
+        {seacms:menulist type=1}<span><a href="[menulist:link]">更多 ></a></span>{/seacms:menulist} </div>
+      <div class="a-con"> {seacms:videolist num=12 order=time type=all}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist} </div>
+    </div>
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="icon icon-hot"></i>&nbsp;热播推荐</h1>
+        <span></span> </div>
+      <div class="a-con"> {seacms:videolist num=12 order=year type=all}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist} </div>
+    </div>
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="icon icon-like"></i>&nbsp;最受欢迎</h1>
+        <span></span> </div>
+      <div class="a-con"> {seacms:videolist num=12 order=hit type=all}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist} </div>
+    </div>
+    <div class="block">
+      <div class="a-tit">
+        <h1><i class="icon icon-film"></i>&nbsp;随机推荐</h1>
+        <span></span> </div>
+      <div class="a-con"> {seacms:videolist num=6 order=random}
+        <div class="a-con-inner">
+          <div class="pic"> <a href="[videolist:link]" title="[videolist:name]"> <img class="lazyload" data-src="[videolist:pic]" src="/zuoz/img/loading.jpg"  alt="[videolist:name]"> <i class="iconfont icon-bofang bofang"></i> </a> <span class="s3 text-left">[videolist:douban]</span> <span class="s4 text-left">[videolist:note]</span> <span class="s5 animate__animated animate__flipInX"> <b> [videolist:actor len=15] </b> <b>[videolist:des len=30]</b> </span> </div>
+          <span class="s1"><a href="[videolist:link]" title="[videolist:name]">[videolist:name]</a></span> <span class="s2"> [videolist:jqtype] </span> </div>
+        {/seacms:videolist} </div>
+    </div>
+  </div>
+</main>
+{seacms:foot}
+</body>
+</html>
