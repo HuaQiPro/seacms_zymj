@@ -687,7 +687,6 @@ function makePlayByData($vType,$vId,$playArr,$str2,$content,$sdate,$enname,$stri
 				$tmp1=str_replace("<head>",'<head><script>var seatype="play"; var seaid='.$vId.';var seaplaylink="'.$playLink.'";</script><script src="/'.$GLOBALS['cfg_cmspath'].'js/seajump.js"></script>',$tmp1);
 				$partName=getPartName($str2,$i,$n);
 				$partNameN=getPartName($str2,$i,$n+1);
-				$partNameNX=getPartName($str2,$i,$n-1);
 				$nextplaylink = getPlayLink2($vType,$vId,date('Y-n',$sdate),$enname,$i,$n+1>=$z?$n:$n+1);
 				$preplaylink  = getPlayLink2($vType,$vId,date('Y-n',$sdate),$enname,$i,$n-1<=0?0:$n-1);
 				$tmp1=str_replace("{playpage:nextplaylink}",$nextplaylink,$tmp1);
@@ -695,8 +694,8 @@ function makePlayByData($vType,$vId,$playArr,$str2,$content,$sdate,$enname,$stri
 				$tmp1 = str_replace("{playpage:ename}",$partName[3],$tmp1);
 				$tmp1 = str_replace("{playpage:part}",$partName[1],$tmp1);
 				$tmp1 = str_replace("{playpage:dz}",$partName[2],$tmp1);
+				$tmp1 = str_replace("{playpage:dzn}",$n+1,$tmp1);
 				$tmp1 = str_replace("{playpage:dzx}",$partNameN[2],$tmp1);
-				$tmp1 = str_replace("{playpage:dzs}",$partNameNX[2],$tmp1);
 				$body= "<script>document.getElementById(\"".$i.$n."\").classList.add(\"playon\");</script>\n\r</body>";
 				$tmp1 = str_replace("</body>",$body,$tmp1);
 				if($cfg_playaddr_enc=='escape'){
